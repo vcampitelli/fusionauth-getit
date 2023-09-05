@@ -28,7 +28,7 @@ COLOR_CYAN="\e[36m"
 # Downloading files
 download() {
   printf '[ %b•%b ] Downloading %b%s%b...' "$COLOR_CYAN" "$COLOR_RESET" "$COLOR_YELLOW" "$1" "$COLOR_RESET"
-  curlError=$(curl --no-progress-meter --fail -o "$1" "$DOCKER_COMPOSE_FILE" 2>&1)
+  curlError=$(curl --no-progress-meter --fail -o "$1" "$2" 2>&1)
   # shellcheck disable=SC2181
   if [ $? -ne 0 ] ; then
     printf '\r[ %b×%b ] Downloading %b%s%b %bFAILED%b\n' "$COLOR_RED" "$COLOR_RESET" "$COLOR_YELLOW" "$1" "$COLOR_RESET" "$COLOR_RED" "$COLOR_RESET"
